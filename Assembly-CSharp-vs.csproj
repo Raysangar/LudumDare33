@@ -46,7 +46,12 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\AIChicken.cs" />
+     <Compile Include="Assets\AIComponent.cs" />
+     <Compile Include="Assets\AttackComponent.cs" />
      <Compile Include="Assets\Cha_Data\Script\ScreenShot.cs" />
+     <Compile Include="Assets\EnemyMovementController.cs" />
+     <Compile Include="Assets\PlayerDetection.cs" />
      <Compile Include="Assets\PolyMesh\Demo\Scripts\RollingRock.cs" />
      <Compile Include="Assets\PolyMesh\Scripts\PolyMesh.cs" />
      <Compile Include="Assets\Scripts\DrawerInputController.cs" />
