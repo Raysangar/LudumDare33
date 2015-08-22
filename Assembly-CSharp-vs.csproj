@@ -47,8 +47,17 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Cha_Data\Script\ScreenShot.cs" />
+     <Compile Include="Assets\PolyMesh\Demo\Scripts\RollingRock.cs" />
+     <Compile Include="Assets\PolyMesh\Scripts\PolyMesh.cs" />
+     <Compile Include="Assets\Scripts\DrawerInputController.cs" />
+     <Compile Include="Assets\Scripts\EnemyHealthBar.cs" />
+     <Compile Include="Assets\Scripts\HealthSystem.cs" />
      <Compile Include="Assets\Scripts\MovementController.cs" />
      <Compile Include="Assets\Scripts\PlayerAttackSystem.cs" />
+     <Compile Include="Assets\Scripts\SealDrawer.cs" />
+     <Compile Include="Assets\Scripts\SealPatternChecker.cs" />
+     <Compile Include="Assets\Scripts\SwordController.cs" />
+     <Compile Include="Assets\Scripts\SwordTrigger.cs" />
      <Compile Include="Assets\SealsWithButton\SealController.cs" />
      <None Include="Assets\Cha_Data\Shader\WrapLambert.shader" />
  <Reference Include="UnityEngine.UI">

@@ -21,7 +21,53 @@ public class MovementController : MonoBehaviour {
 		controller = (CharacterController)GetComponent(typeof(CharacterController));
 		anim = GetComponent<Animator> ();
 	}
-	float UpdateMovement()
+
+	void Update()
+	{
+		Attack ();
+		Locomotion ();
+	}
+
+	void Attack ()
+	{
+		if (Input.GetKeyDown (KeyCode.E)) {
+			anim.SetTrigger ("Attack");
+		}
+	}
+
+	private void Locomotion ()
+	{
+		// Check for jump
+		if (controller.isGrounded) {
+			Jump ();
+		}
+		else {
+			// Apply gravity to our velocity to diminish it over time
+			verticalVel += Physics.gravity.y * Time.deltaTime;
+		}
+		// Actually move the character
+		Move ();
+	}
+
+	private void Jump ()
+	{
+		canJump = true;
+		if (canJump && Input.GetKeyDown ("space")) {
+			// Apply the current movement to launch velocity
+			verticalVel = jumpSpeed;
+			canJump = false;
+		}
+	}
+
+	private void Move ()
+	{
+		moveSpeed = UpdateMovement ();
+		anim.SetFloat ("MoveSpeed", moveSpeed);
+		if (controller.isGrounded)
+			verticalVel = 0f;// Remove any persistent velocity after landing
+	}
+
+	private float UpdateMovement()
 	{
 		// Movement
 		float x = Input.GetAxis("Horizontal");
@@ -36,31 +82,5 @@ public class MovementController : MonoBehaviour {
 			                                      Time.deltaTime * rotationDamping);
 		return inputVec.magnitude;
 	}
-	void Update()
-	{
-		if(Input.GetKeyDown(KeyCode.E)){
-			anim.SetTrigger("Attack");
 
-		}
-		// Check for jump
-		if (controller.isGrounded )
-		{
-			canJump = true;
-			if ( canJump && Input.GetKeyDown("space") )
-			{
-				// Apply the current movement to launch velocity
-				verticalVel = jumpSpeed;
-				canJump = false;
-			}
-		}else
-		{           
-			// Apply gravity to our velocity to diminish it over time
-			verticalVel += Physics.gravity.y * Time.deltaTime;
-		}
-		// Actually move the character
-		moveSpeed = UpdateMovement(); 
-		anim.SetFloat ("MoveSpeed",moveSpeed);
-		if ( controller.isGrounded )
-			verticalVel = 0f;// Remove any persistent velocity after landing
-	}
 }
