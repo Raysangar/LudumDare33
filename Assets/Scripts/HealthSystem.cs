@@ -30,7 +30,7 @@ public class HealthSystem : MonoBehaviour {
 	private IEnumerator Die(){
         SendMessage("stopPermanently");
 		SendMessage ("DeadBleed");
-        if (tag == "Player")
+        if (tag == "Player" || tag == "Altar")
             GameObject.Find("GameManager").SendMessage("GameOver");
         else
         {
