@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: cbbde2b8c2dd941f3904d697c840b87d
-timeCreated: 1440272130
+guid: 6fb4fd7ed4e634bdabef854868ac9315
+timeCreated: 1440325734
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
     100000: Camera
     100002: //RootNode
-    100004: Torus
+    100004: Plane
     400000: Camera
     400002: //RootNode
-    400004: Torus
-    2300000: Torus
-    3300000: Torus
-    4300000: Torus
+    400004: Plane
+    2300000: Plane
+    3300000: Plane
+    4300000: Plane
   materials:
     importMaterials: 1
     materialName: 0
