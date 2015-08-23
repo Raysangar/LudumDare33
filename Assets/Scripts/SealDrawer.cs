@@ -26,9 +26,10 @@ public class SealDrawer : MonoBehaviour {
     {
         Material startingMaterial = meshRenderer.material;
         Texture2D sealTexture = startingMaterial.mainTexture as Texture2D;
-        Texture2D newTexture = new Texture2D(sealTexture.width, sealTexture.height, sealTexture.format, false);
+        Texture2D newTexture = new Texture2D(sealTexture.width, sealTexture.height, TextureFormat.ARGB32, false);
         newTexture.SetPixels32(sealTexture.GetPixels32());
-        newTexture.SetPixel((int)(textureCoordinate.x * sealTexture.width), (int)(textureCoordinate.y * sealTexture.height), Color.red);
+        Color color = new Color(0, 0, 1, 1);
+        newTexture.SetPixel((int)(textureCoordinate.x * sealTexture.width), (int)(textureCoordinate.y * sealTexture.height), color);
         newTexture.Apply();
         Material material = new Material(startingMaterial);
         material.mainTexture = newTexture;
