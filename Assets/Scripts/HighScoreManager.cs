@@ -24,9 +24,7 @@ public class HighScoreManager{
 		List<float> highScores = new List<float>();
 		string temp=PlayerPrefs.GetString("HighScores",null); 
 		if (temp != null && temp != "") {
-			Debug.Log(temp);
 			string[] tempArray=temp.Split("*".ToCharArray());
-			Debug.Log(tempArray.Length);
 
 			for(int i=0;i<tempArray.Length;i++) { 
 				highScores.Add(float.Parse(tempArray[i])); 
