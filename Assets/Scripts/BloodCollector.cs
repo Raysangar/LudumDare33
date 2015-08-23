@@ -37,7 +37,7 @@ public class BloodCollector : MonoBehaviour {
 	}
 
 	private void UpdateCounter(){
-		//bloodCounter.text = accumulatedBlood.ToString ();
+		bloodCounter.text = scoreBlood.ToString ();
 	}
 
 	private void UpdateSummonBar(){
