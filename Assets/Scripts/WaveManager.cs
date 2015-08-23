@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -14,12 +14,12 @@ public class WaveManager : MonoBehaviour {
 
 	void Start () {
         bloodCollector = GameObject.Find("Player").GetComponent<BloodCollector>();
-        currentLevel = getMaximunLevelAvailableFor(bloodCollector.accumulatedBlood);
+        currentLevel = getMaximunLevelAvailableFor(bloodCollector.scoreBlood);
         InvokeRepeating("instantiateEnemyIfNecessary", 0, wavesInfo[currentLevel].appearenceTimePeriod);
 	}
 	
 	void FixedUpdate () {
-        int nextLevel = getMaximunLevelAvailableFor(bloodCollector.accumulatedBlood);
+        int nextLevel = getMaximunLevelAvailableFor(bloodCollector.scoreBlood);
         if (nextLevel != currentLevel)
         {
             CancelInvoke("instantiateEnemyIfNecessary");
