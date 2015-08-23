@@ -5,6 +5,9 @@ public class EnemyMovementController : MonoBehaviour {
     private Vector3 movement;
     private CharacterController characterController;
     private bool blocked;
+	private Animator myAnimator;
+
+	public float rotationDamping = 20f;
 
     [SerializeField]
     private float gravity;
@@ -16,6 +19,7 @@ public class EnemyMovementController : MonoBehaviour {
 	void Start () {
         blocked = false;
         characterController = GetComponent<CharacterController>();
+		myAnimator = GetComponent<Animator>();
 	}
 	
 	// Update is called once per frame
@@ -24,6 +28,14 @@ public class EnemyMovementController : MonoBehaviour {
         Vector3 movementIncrement = movement * movementSpeed * Time.deltaTime;
         movementIncrement.y = -gravity * Time.deltaTime;
         characterController.Move(movementIncrement);
+
+		if (movement != Vector3.zero)
+			transform.rotation = Quaternion.Slerp(transform.rotation, 
+			                                      Quaternion.LookRotation(movement), 
+			                                      Time.deltaTime * rotationDamping);
+		float speed = this.characterController.velocity.magnitude;
+		myAnimator.SetFloat("MoveSpeed",speed);
+
 	}
 
     public void moveTo(Vector3 position)
