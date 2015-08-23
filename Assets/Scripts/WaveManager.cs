@@ -13,22 +13,29 @@ public class WaveManager : MonoBehaviour {
     private BloodCollector bloodCollector;
 
 	void Start () {
-        bloodCollector = GameObject.Find("BloodCollector").GetComponent<BloodCollector>();
+        bloodCollector = GameObject.Find("Player").GetComponent<BloodCollector>();
         currentLevel = getMaximunLevelAvailableFor(bloodCollector.accumulatedBlood);
+        InvokeRepeating("instantiateEnemyIfNecessary", 0, wavesInfo[currentLevel].appearenceTimePeriod);
 	}
 	
 	void FixedUpdate () {
-        currentLevel = getMaximunLevelAvailableFor(bloodCollector.accumulatedBlood);
-        instantiateEnemyIfNecessary();
+        int nextLevel = getMaximunLevelAvailableFor(bloodCollector.accumulatedBlood);
+        if (nextLevel != currentLevel)
+        {
+            CancelInvoke("instantiateEnemyIfNecessary");
+            InvokeRepeating("instantiateEnemyIfNecessary", 0, wavesInfo[nextLevel].appearenceTimePeriod);
+        }
+        currentLevel = nextLevel;
 	}
 
     private int getMaximunLevelAvailableFor(float bloodAmount)
     {
-        int waveIndex = -1;
+        int waveIndex = 0;
         for (int i = 0; i < wavesInfo.Length; ++i)
-            if (wavesInfo[i].minimunLevelOfBloodNeeded <= bloodAmount && wavesInfo[i].minimunLevelOfBloodNeeded > wavesInfo[waveIndex].minimunLevelOfBloodNeeded)
+            if (bloodAmount > wavesInfo[i].minimunLevelOfBloodNeeded)
                 waveIndex = i;
-        return waveIndex;
+        return (wavesInfo[currentLevel].minimunLevelOfBloodNeeded < wavesInfo[waveIndex].minimunLevelOfBloodNeeded) ? 
+            waveIndex : currentLevel;
     }
 
     private void instantiateEnemyIfNecessary()
@@ -66,8 +73,10 @@ public class WaveManager : MonoBehaviour {
     {
         ArrayList candidateEnemyForInstantiate = new ArrayList();
         for (int i = 0; i < wavesInfo[currentLevel].enemiesOnWave.Length; ++i)
-            if (wavesInfo[currentLevel].enemiesAppearanceProbability[i] < (enemiesCount / enemies[wavesInfo[currentLevel].enemiesOnWave[i].tag].Length))
+        {
+            if (wavesInfo[currentLevel].enemiesAppearanceProbability[i] > (enemies[wavesInfo[currentLevel].enemiesOnWave[i].tag].Length / (enemiesCount+1)) * 100)
                 candidateEnemyForInstantiate.Add(wavesInfo[currentLevel].enemiesOnWave[i]);
-        return candidateEnemyForInstantiate[Random.Range(0, candidateEnemyForInstantiate.Count - 1)] as GameObject;
+        }
+        return candidateEnemyForInstantiate[Random.Range(0, candidateEnemyForInstantiate.Count)] as GameObject;
     }
 }

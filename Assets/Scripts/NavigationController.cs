@@ -4,9 +4,9 @@ using System.Collections;
 public class NavigationController : Singleton<NavigationController> {
 	
 
-	public string menuScene = "MecanimTest";
+	public string menuScene = "MenuScene";
 	public string highScoreScene = "HighScoreScene";
-	public string gameScene = "GameScene";
+	public string gameScene = "MecanimTest";
 
 
 	public void GoToScene(string sceneName){

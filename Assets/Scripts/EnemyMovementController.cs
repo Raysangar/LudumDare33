@@ -4,6 +4,7 @@ using System.Collections;
 public class EnemyMovementController : MonoBehaviour {
     private Vector3 movement;
     private CharacterController characterController;
+    private bool blocked;
 
     [SerializeField]
     private float gravity;
@@ -13,11 +14,13 @@ public class EnemyMovementController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        blocked = false;
         characterController = GetComponent<CharacterController>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
+        if (blocked) return;
         Vector3 movementIncrement = movement * movementSpeed * Time.deltaTime;
         movementIncrement.y = -gravity * Time.deltaTime;
         characterController.Move(movementIncrement);
@@ -36,5 +39,10 @@ public class EnemyMovementController : MonoBehaviour {
     public void stop()
     {
         movement = Vector3.zero;
+    }
+
+    public void stopPermanently()
+    {
+        blocked = true;
     }
 }
