@@ -3,9 +3,10 @@ using System.Collections;
 
 public class GameManager : MonoBehaviour {
 
+	private HighScoreManager highScoreManager;
 	// Use this for initialization
 	void Start () {
-	
+		highScoreManager = new HighScoreManager ();
 	}
 	
 	// Update is called once per frame
@@ -15,6 +16,13 @@ public class GameManager : MonoBehaviour {
 
     public void GameOver()
     {
-        NavigationController.Instance.GoToScene("MenuScene");
+		SaveCurrentScore ();
+        NavigationController.Instance.GoToScene(NavigationController.Instance.highScoreScene);
     }
+
+	void SaveCurrentScore ()
+	{
+		float score = GameObject.FindGameObjectWithTag ("Player").GetComponent<BloodCollector> ().scoreBlood;
+		highScoreManager.SaveScore (score);
+	}
 }
