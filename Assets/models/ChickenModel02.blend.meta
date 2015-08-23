@@ -1,0 +1,662 @@
+fileFormatVersion: 2
+guid: 15952fe859f6a4b989e4270580af5acc
+timeCreated: 1440349942
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Chest
+    100002: Chicken
+    100004: ChickenArmature
+    100006: //RootNode
+    100008: Foot_L
+    100010: Foot_R
+    100012: Head
+    100014: Hips
+    100016: MouthDown
+    100018: MouthUp
+    100020: Neck
+    100022: Shin_L
+    100024: Shin_R
+    100026: Tail01
+    100028: Tail02
+    100030: Thigh_L
+    100032: Thigh_R
+    100034: Wing01_L
+    100036: Wing01_R
+    100038: Wing02_L
+    100040: Wing02_R
+    400000: Chest
+    400002: Chicken
+    400004: ChickenArmature
+    400006: //RootNode
+    400008: Foot_L
+    400010: Foot_R
+    400012: Head
+    400014: Hips
+    400016: MouthDown
+    400018: MouthUp
+    400020: Neck
+    400022: Shin_L
+    400024: Shin_R
+    400026: Tail01
+    400028: Tail02
+    400030: Thigh_L
+    400032: Thigh_R
+    400034: Wing01_L
+    400036: Wing01_R
+    400038: Wing02_L
+    400040: Wing02_R
+    4300000: Chicken
+    7400000: Default Take
+    7400002: ChickenAttack
+    7400004: ChickenDie
+    7400006: ChickenHitDamage
+    7400008: ChickenIdle
+    7400010: ChickenIdle02
+    7400012: ChickenIdle03
+    7400014: ChickenRun
+    9500000: //RootNode
+    13700000: Chicken
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Default Take
+      takeName: Default Take
+      firstFrame: 0
+      lastFrame: 29
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Chicken
+        weight: 1
+      - path: ChickenArmature
+        weight: 1
+      - path: ChickenArmature/Hips
+        weight: 1
+      - path: ChickenArmature/Hips/Chest
+        weight: 1
+      - path: ChickenArmature/Hips/Chest/Neck
+        weight: 1
+      - path: ChickenArmature/Hips/Chest/Neck/Head
+        weight: 1
+      - path: ChickenArmature/Hips/Chest/Neck/Head/MouthUp
+        weight: 1
+      - path: ChickenArmature/Hips/Chest/Neck/Head/MouthUp/MouthDown
+        weight: 1
+      - path: ChickenArmature/Hips/Chest/Wing01_L
+        weight: 1
+      - path: ChickenArmature/Hips/Chest/Wing01_L/Wing02_L
+        weight: 1
+      - path: ChickenArmature/Hips/Chest/Wing01_R
+        weight: 1
+      - path: ChickenArmature/Hips/Chest/Wing01_R/Wing02_R
+        weight: 1
+      - path: ChickenArmature/Hips/Tail01
+        weight: 1
+      - path: ChickenArmature/Hips/Tail01/Tail02
+        weight: 1
+      - path: ChickenArmature/Hips/Thigh_L
+        weight: 1
+      - path: ChickenArmature/Hips/Thigh_L/Shin_L
+        weight: 1
+      - path: ChickenArmature/Hips/Thigh_L/Shin_L/Foot_L
+        weight: 1
+      - path: ChickenArmature/Hips/Thigh_R
+        weight: 1
+      - path: ChickenArmature/Hips/Thigh_R/Shin_R
+        weight: 1
+      - path: ChickenArmature/Hips/Thigh_R/Shin_R/Foot_R
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: ChickenAttack
+      takeName: Attack
+      firstFrame: -1
+      lastFrame: 29
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Chicken
+        weight: 1
+      - path: ChickenArmature
+        weight: 1
+      - path: ChickenArmature/Hips
+        weight: 1
+      - path: ChickenArmature/Hips/Chest
+        weight: 1
+      - path: ChickenArmature/Hips/Chest/Neck
+        weight: 1
+      - path: ChickenArmature/Hips/Chest/Neck/Head
+        weight: 1
+      - path: ChickenArmature/Hips/Chest/Neck/Head/MouthUp
+        weight: 1
+      - path: ChickenArmature/Hips/Chest/Neck/Head/MouthUp/MouthDown
+        weight: 1
+      - path: ChickenArmature/Hips/Chest/Wing01_L
+        weight: 1
+      - path: ChickenArmature/Hips/Chest/Wing01_L/Wing02_L
+        weight: 1
+      - path: ChickenArmature/Hips/Chest/Wing01_R
+        weight: 1
+      - path: ChickenArmature/Hips/Chest/Wing01_R/Wing02_R
+        weight: 1
+      - path: ChickenArmature/Hips/Tail01
+        weight: 1
+      - path: ChickenArmature/Hips/Tail01/Tail02
+        weight: 1
+      - path: ChickenArmature/Hips/Thigh_L
+        weight: 1
+      - path: ChickenArmature/Hips/Thigh_L/Shin_L
+        weight: 1
+      - path: ChickenArmature/Hips/Thigh_L/Shin_L/Foot_L
+        weight: 1
+      - path: ChickenArmature/Hips/Thigh_R
+        weight: 1
+      - path: ChickenArmature/Hips/Thigh_R/Shin_R
+        weight: 1
+      - path: ChickenArmature/Hips/Thigh_R/Shin_R/Foot_R
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: ChickenDie
+      takeName: Die
+      firstFrame: -1
+      lastFrame: 24
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Chicken
+        weight: 1
+      - path: ChickenArmature
+        weight: 1
+      - path: ChickenArmature/Hips
+        weight: 1
+      - path: ChickenArmature/Hips/Chest
+        weight: 1
+      - path: ChickenArmature/Hips/Chest/Neck
+        weight: 1
+      - path: ChickenArmature/Hips/Chest/Neck/Head
+        weight: 1
+      - path: ChickenArmature/Hips/Chest/Neck/Head/MouthUp
+        weight: 1
+      - path: ChickenArmature/Hips/Chest/Neck/Head/MouthUp/MouthDown
+        weight: 1
+      - path: ChickenArmature/Hips/Chest/Wing01_L
+        weight: 1
+      - path: ChickenArmature/Hips/Chest/Wing01_L/Wing02_L
+        weight: 1
+      - path: ChickenArmature/Hips/Chest/Wing01_R
+        weight: 1
+      - path: ChickenArmature/Hips/Chest/Wing01_R/Wing02_R
+        weight: 1
+      - path: ChickenArmature/Hips/Tail01
+        weight: 1
+      - path: ChickenArmature/Hips/Tail01/Tail02
+        weight: 1
+      - path: ChickenArmature/Hips/Thigh_L
+        weight: 1
+      - path: ChickenArmature/Hips/Thigh_L/Shin_L
+        weight: 1
+      - path: ChickenArmature/Hips/Thigh_L/Shin_L/Foot_L
+        weight: 1
+      - path: ChickenArmature/Hips/Thigh_R
+        weight: 1
+      - path: ChickenArmature/Hips/Thigh_R/Shin_R
+        weight: 1
+      - path: ChickenArmature/Hips/Thigh_R/Shin_R/Foot_R
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: ChickenHitDamage
+      takeName: HitDamage
+      firstFrame: -1
+      lastFrame: 29
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Chicken
+        weight: 1
+      - path: ChickenArmature
+        weight: 1
+      - path: ChickenArmature/Hips
+        weight: 1
+      - path: ChickenArmature/Hips/Chest
+        weight: 1
+      - path: ChickenArmature/Hips/Chest/Neck
+        weight: 1
+      - path: ChickenArmature/Hips/Chest/Neck/Head
+        weight: 1
+      - path: ChickenArmature/Hips/Chest/Neck/Head/MouthUp
+        weight: 1
+      - path: ChickenArmature/Hips/Chest/Neck/Head/MouthUp/MouthDown
+        weight: 1
+      - path: ChickenArmature/Hips/Chest/Wing01_L
+        weight: 1
+      - path: ChickenArmature/Hips/Chest/Wing01_L/Wing02_L
+        weight: 1
+      - path: ChickenArmature/Hips/Chest/Wing01_R
+        weight: 1
+      - path: ChickenArmature/Hips/Chest/Wing01_R/Wing02_R
+        weight: 1
+      - path: ChickenArmature/Hips/Tail01
+        weight: 1
+      - path: ChickenArmature/Hips/Tail01/Tail02
+        weight: 1
+      - path: ChickenArmature/Hips/Thigh_L
+        weight: 1
+      - path: ChickenArmature/Hips/Thigh_L/Shin_L
+        weight: 1
+      - path: ChickenArmature/Hips/Thigh_L/Shin_L/Foot_L
+        weight: 1
+      - path: ChickenArmature/Hips/Thigh_R
+        weight: 1
+      - path: ChickenArmature/Hips/Thigh_R/Shin_R
+        weight: 1
+      - path: ChickenArmature/Hips/Thigh_R/Shin_R/Foot_R
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: ChickenIdle
+      takeName: Idle
+      firstFrame: -1
+      lastFrame: 29
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Chicken
+        weight: 1
+      - path: ChickenArmature
+        weight: 1
+      - path: ChickenArmature/Hips
+        weight: 1
+      - path: ChickenArmature/Hips/Chest
+        weight: 1
+      - path: ChickenArmature/Hips/Chest/Neck
+        weight: 1
+      - path: ChickenArmature/Hips/Chest/Neck/Head
+        weight: 1
+      - path: ChickenArmature/Hips/Chest/Neck/Head/MouthUp
+        weight: 1
+      - path: ChickenArmature/Hips/Chest/Neck/Head/MouthUp/MouthDown
+        weight: 1
+      - path: ChickenArmature/Hips/Chest/Wing01_L
+        weight: 1
+      - path: ChickenArmature/Hips/Chest/Wing01_L/Wing02_L
+        weight: 1
+      - path: ChickenArmature/Hips/Chest/Wing01_R
+        weight: 1
+      - path: ChickenArmature/Hips/Chest/Wing01_R/Wing02_R
+        weight: 1
+      - path: ChickenArmature/Hips/Tail01
+        weight: 1
+      - path: ChickenArmature/Hips/Tail01/Tail02
+        weight: 1
+      - path: ChickenArmature/Hips/Thigh_L
+        weight: 1
+      - path: ChickenArmature/Hips/Thigh_L/Shin_L
+        weight: 1
+      - path: ChickenArmature/Hips/Thigh_L/Shin_L/Foot_L
+        weight: 1
+      - path: ChickenArmature/Hips/Thigh_R
+        weight: 1
+      - path: ChickenArmature/Hips/Thigh_R/Shin_R
+        weight: 1
+      - path: ChickenArmature/Hips/Thigh_R/Shin_R/Foot_R
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: ChickenIdle02
+      takeName: Idle02
+      firstFrame: -1
+      lastFrame: 49
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Chicken
+        weight: 1
+      - path: ChickenArmature
+        weight: 1
+      - path: ChickenArmature/Hips
+        weight: 1
+      - path: ChickenArmature/Hips/Chest
+        weight: 1
+      - path: ChickenArmature/Hips/Chest/Neck
+        weight: 1
+      - path: ChickenArmature/Hips/Chest/Neck/Head
+        weight: 1
+      - path: ChickenArmature/Hips/Chest/Neck/Head/MouthUp
+        weight: 1
+      - path: ChickenArmature/Hips/Chest/Neck/Head/MouthUp/MouthDown
+        weight: 1
+      - path: ChickenArmature/Hips/Chest/Wing01_L
+        weight: 1
+      - path: ChickenArmature/Hips/Chest/Wing01_L/Wing02_L
+        weight: 1
+      - path: ChickenArmature/Hips/Chest/Wing01_R
+        weight: 1
+      - path: ChickenArmature/Hips/Chest/Wing01_R/Wing02_R
+        weight: 1
+      - path: ChickenArmature/Hips/Tail01
+        weight: 1
+      - path: ChickenArmature/Hips/Tail01/Tail02
+        weight: 1
+      - path: ChickenArmature/Hips/Thigh_L
+        weight: 1
+      - path: ChickenArmature/Hips/Thigh_L/Shin_L
+        weight: 1
+      - path: ChickenArmature/Hips/Thigh_L/Shin_L/Foot_L
+        weight: 1
+      - path: ChickenArmature/Hips/Thigh_R
+        weight: 1
+      - path: ChickenArmature/Hips/Thigh_R/Shin_R
+        weight: 1
+      - path: ChickenArmature/Hips/Thigh_R/Shin_R/Foot_R
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: ChickenIdle03
+      takeName: Idle03
+      firstFrame: -1
+      lastFrame: 49
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Chicken
+        weight: 1
+      - path: ChickenArmature
+        weight: 1
+      - path: ChickenArmature/Hips
+        weight: 1
+      - path: ChickenArmature/Hips/Chest
+        weight: 1
+      - path: ChickenArmature/Hips/Chest/Neck
+        weight: 1
+      - path: ChickenArmature/Hips/Chest/Neck/Head
+        weight: 1
+      - path: ChickenArmature/Hips/Chest/Neck/Head/MouthUp
+        weight: 1
+      - path: ChickenArmature/Hips/Chest/Neck/Head/MouthUp/MouthDown
+        weight: 1
+      - path: ChickenArmature/Hips/Chest/Wing01_L
+        weight: 1
+      - path: ChickenArmature/Hips/Chest/Wing01_L/Wing02_L
+        weight: 1
+      - path: ChickenArmature/Hips/Chest/Wing01_R
+        weight: 1
+      - path: ChickenArmature/Hips/Chest/Wing01_R/Wing02_R
+        weight: 1
+      - path: ChickenArmature/Hips/Tail01
+        weight: 1
+      - path: ChickenArmature/Hips/Tail01/Tail02
+        weight: 1
+      - path: ChickenArmature/Hips/Thigh_L
+        weight: 1
+      - path: ChickenArmature/Hips/Thigh_L/Shin_L
+        weight: 1
+      - path: ChickenArmature/Hips/Thigh_L/Shin_L/Foot_L
+        weight: 1
+      - path: ChickenArmature/Hips/Thigh_R
+        weight: 1
+      - path: ChickenArmature/Hips/Thigh_R/Shin_R
+        weight: 1
+      - path: ChickenArmature/Hips/Thigh_R/Shin_R/Foot_R
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: ChickenRun
+      takeName: Run
+      firstFrame: -1
+      lastFrame: 29
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Chicken
+        weight: 1
+      - path: ChickenArmature
+        weight: 1
+      - path: ChickenArmature/Hips
+        weight: 1
+      - path: ChickenArmature/Hips/Chest
+        weight: 1
+      - path: ChickenArmature/Hips/Chest/Neck
+        weight: 1
+      - path: ChickenArmature/Hips/Chest/Neck/Head
+        weight: 1
+      - path: ChickenArmature/Hips/Chest/Neck/Head/MouthUp
+        weight: 1
+      - path: ChickenArmature/Hips/Chest/Neck/Head/MouthUp/MouthDown
+        weight: 1
+      - path: ChickenArmature/Hips/Chest/Wing01_L
+        weight: 1
+      - path: ChickenArmature/Hips/Chest/Wing01_L/Wing02_L
+        weight: 1
+      - path: ChickenArmature/Hips/Chest/Wing01_R
+        weight: 1
+      - path: ChickenArmature/Hips/Chest/Wing01_R/Wing02_R
+        weight: 1
+      - path: ChickenArmature/Hips/Tail01
+        weight: 1
+      - path: ChickenArmature/Hips/Tail01/Tail02
+        weight: 1
+      - path: ChickenArmature/Hips/Thigh_L
+        weight: 1
+      - path: ChickenArmature/Hips/Thigh_L/Shin_L
+        weight: 1
+      - path: ChickenArmature/Hips/Thigh_L/Shin_L/Foot_L
+        weight: 1
+      - path: ChickenArmature/Hips/Thigh_R
+        weight: 1
+      - path: ChickenArmature/Hips/Thigh_R/Shin_R
+        weight: 1
+      - path: ChickenArmature/Hips/Thigh_R/Shin_R/Foot_R
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .200000003
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
