@@ -5,8 +5,20 @@ public class SwordController : MonoBehaviour {
 
 	public float swordDamage = 10;
 	public Collider swordTrigger;
+	AudioSource audio;
+	public AudioClip attackClip;
 
+
+
+	void Start()
+	{
+		audio = GetComponent<AudioSource> ();
+
+	}
 	public void EnableSwordTrigger(){
+
+		audio.clip=attackClip;
+		audio.Play();
 		swordTrigger.enabled = true;
 	}
 
