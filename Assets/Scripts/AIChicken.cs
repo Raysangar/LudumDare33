@@ -5,13 +5,22 @@ public class AIChicken : MonoBehaviour {
     private EnemyMovementController movementController;
     private Vector3 target;
 
+    private Vector3 topPosition, bottonPosition, leftPosition, rightPosition;
+
     [SerializeField]
-    private float levelMaxWith, levelMaxLong;
+    private float movementRange;
 
 	// Use this for initialization
 	void Start () {
+        topPosition = GameObject.Find("TopLimit").transform.position;
+        bottonPosition = GameObject.Find("BottonLimit").transform.position;
+        leftPosition = GameObject.Find("LeftLimit").transform.position;
+        rightPosition = GameObject.Find("RightLimit").transform.position;
         movementController = GetComponent<EnemyMovementController>();
-        InvokeRepeating("selectNewTarget", 0, 10);
+        target = new Vector3(Random.Range(leftPosition.x, rightPosition.x),
+            transform.position.y, Random.Range(bottonPosition.z, topPosition.z));
+        movementController.moveTo(target);
+        InvokeRepeating("selectNewTarget", 15, 10);
 	}
 	
 	// Update is called once per frame
@@ -22,7 +31,11 @@ public class AIChicken : MonoBehaviour {
 
     private void selectNewTarget()
     {
-        target = new Vector3(Random.Range(-levelMaxLong/2, levelMaxWith/2), transform.position.y, Random.Range(-levelMaxLong/2, levelMaxLong/2));
+        do
+        {
+            target = new Vector3(Random.Range(leftPosition.x, rightPosition.x),
+                transform.position.y, Random.Range(bottonPosition.z, topPosition.z));
+        } while (Vector3.Distance(target, transform.position) > movementRange);
         movementController.moveTo(target);
     }
 }
