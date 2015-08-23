@@ -13,7 +13,7 @@ public class AIChicken : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         topPosition = GameObject.Find("TopLimit").transform.position;
-        bottonPosition = GameObject.Find("BottonLimit").transform.position;
+        bottonPosition = GameObject.Find("BottomLimit").transform.position;
         leftPosition = GameObject.Find("LeftLimit").transform.position;
         rightPosition = GameObject.Find("RightLimit").transform.position;
         movementController = GetComponent<EnemyMovementController>();
@@ -31,11 +31,11 @@ public class AIChicken : MonoBehaviour {
 
     private void selectNewTarget()
     {
-        do
-        {
+       // do
+        //{
             target = new Vector3(Random.Range(leftPosition.x, rightPosition.x),
                 transform.position.y, Random.Range(bottonPosition.z, topPosition.z));
-        } while (Vector3.Distance(target, transform.position) > movementRange);
+        //} while (Vector3.Distance(target, transform.position) > movementRange);
         movementController.moveTo(target);
     }
 }
