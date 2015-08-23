@@ -2,8 +2,6 @@
 using System.Collections;
 
 public class AttackComponent : MonoBehaviour {
-    [SerializeField]
-    private int attackDamage;
 
     [SerializeField]
     private float timeBetweenAttacks;
@@ -12,10 +10,12 @@ public class AttackComponent : MonoBehaviour {
     private float attackRange;
 
     private float timeSinceLastAttack;
+    private Animator animator;
 
     void Start()
     {
         timeSinceLastAttack = timeBetweenAttacks;
+        animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -34,7 +34,8 @@ public class AttackComponent : MonoBehaviour {
         Vector3 lookAtPosition = target.transform.position;
         lookAtPosition.y = transform.position.y;
         transform.LookAt(lookAtPosition);
-        target.SendMessage("ReceiveDamage", attackDamage);
+        //target.SendMessage("ReceiveDamage", attackDamage);
+        animator.SetTrigger("Attack");
         timeSinceLastAttack = 0;
     }
 }
