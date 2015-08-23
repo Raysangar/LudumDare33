@@ -13,7 +13,7 @@ public class BleedingSystem : MonoBehaviour {
 	private BloodCollector bloodCollector;
 
 	void Start(){
-		bloodCollector = GameObject.Find ("BloodCollector").GetComponent<BloodCollector>();
+		bloodCollector = GameObject.FindGameObjectWithTag ("Player").GetComponent<BloodCollector>();
 	}
 
 	public void HitBleed(){
