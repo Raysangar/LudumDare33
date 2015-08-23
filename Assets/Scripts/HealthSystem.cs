@@ -34,6 +34,7 @@ public class HealthSystem : MonoBehaviour {
             GameObject.Find("GameManager").SendMessage("GameOver");
         else
         {
+            GetComponent<Animator>().SetTrigger("Die");
             GameObject.Find("Player").SendMessage("CollectBlood", maxHealth);
             yield return new WaitForSeconds(1.5f);
             Destroy(this.gameObject);
