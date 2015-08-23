@@ -25,7 +25,7 @@ public class AIChicken : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Vector3.Distance(transform.position, target) <= 0.9)
+        if (Vector3.Distance(transform.position, target) <= 2)
             movementController.stop();
 	}
 

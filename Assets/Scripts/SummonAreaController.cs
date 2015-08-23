@@ -25,12 +25,12 @@ public class SummonAreaController : MonoBehaviour {
 	void Update () {
         if (playerOnSummonArea && !summoner.playerIsADemon)
         {
-            textHint.text = (summoner.getNecessaryBlood() <= bloodCollector.currentBloodForSummon) ?
+            textHint.text = (bloodCollector.maxBloodForSummon <= bloodCollector.currentBloodForSummon) ?
                 "Press Space to Summon the Demon" : "Collect Blood for Summoning the Demon";
-            if (bloodCollector.currentBloodForSummon >= summoner.getNecessaryBlood() && Input.GetKeyDown(KeyCode.Space))
+            if (bloodCollector.currentBloodForSummon >= bloodCollector.maxBloodForSummon && Input.GetKeyDown(KeyCode.Space))
             {
                 summoner.summonDemon();
-                bloodCollector.currentBloodForSummon = 0;
+                bloodCollector.UseBlood(bloodCollector.currentBloodForSummon);
             }
             hint.SetActive(true);
         }

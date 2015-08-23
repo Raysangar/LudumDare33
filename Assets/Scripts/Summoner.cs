@@ -6,9 +6,6 @@ public class Summoner : MonoBehaviour {
     private GameObject player, demon;
 
     [SerializeField]
-    private int bloodNeeded;
-
-    [SerializeField]
     private float maximunTimeOnDemon;
 
     private float currentTimeOnDemon;
@@ -32,11 +29,6 @@ public class Summoner : MonoBehaviour {
             }
         }
 	}
-
-    public int getNecessaryBlood()
-    {
-        return bloodNeeded;
-    }
 
     public void summonDemon()
     {
