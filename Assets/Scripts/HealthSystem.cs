@@ -19,7 +19,7 @@ public class HealthSystem : MonoBehaviour {
 		}
 		currentHealth -= damage;
 		SendMessage ("UpdateFloatingHealthBar",currentHealth/maxHealth, SendMessageOptions.DontRequireReceiver);
-		SendMessage("HitBleed");
+		SendMessage("HitBleed", SendMessageOptions.DontRequireReceiver);
 
 		if (currentHealth <= 0) {
 			alive = false;
@@ -28,8 +28,8 @@ public class HealthSystem : MonoBehaviour {
 	}
 
 	private IEnumerator Die(){
-        SendMessage("stopPermanently");
-		SendMessage ("DeadBleed");
+        SendMessage("stopPermanently", SendMessageOptions.DontRequireReceiver);
+		SendMessage ("DeadBleed", SendMessageOptions.DontRequireReceiver);
         if (tag == "Player" || tag == "Altar")
             GameObject.Find("GameManager").SendMessage("GameOver");
         else

@@ -20,7 +20,7 @@ public class AttackComponent : MonoBehaviour {
 
     void Update()
     {
-        timeBetweenAttacks += Time.deltaTime;
+        timeSinceLastAttack += Time.deltaTime;
     }
 
     public float getAttackRange()
@@ -34,7 +34,6 @@ public class AttackComponent : MonoBehaviour {
         Vector3 lookAtPosition = target.transform.position;
         lookAtPosition.y = transform.position.y;
         transform.LookAt(lookAtPosition);
-        Debug.Log("Attacking to " + target);
         target.SendMessage("ReceiveDamage", attackDamage);
         timeSinceLastAttack = 0;
     }
