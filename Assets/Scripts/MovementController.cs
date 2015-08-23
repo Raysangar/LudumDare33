@@ -5,7 +5,7 @@ using System.Collections;
 [RequireComponent(typeof (CharacterController))]
                   
 public class MovementController : MonoBehaviour {
-	
+    private bool blocked;
 	public float rotationDamping = 20f;
 	public float runSpeed = 10f;
 	public int gravity = 20;
@@ -18,6 +18,7 @@ public class MovementController : MonoBehaviour {
 
 	void Start()
 	{
+        blocked = false;
 		controller = (CharacterController)GetComponent(typeof(CharacterController));
 		anim = GetComponent<Animator> ();
 	}
@@ -37,6 +38,7 @@ public class MovementController : MonoBehaviour {
 
 	private void Locomotion ()
 	{
+        if (blocked) return;
 		// Check for jump
 		if (controller.isGrounded) {
 			Jump ();
@@ -83,4 +85,8 @@ public class MovementController : MonoBehaviour {
 		return inputVec.magnitude;
 	}
 
+    public void stopPermanently()
+    {
+        blocked = true;
+    }
 }

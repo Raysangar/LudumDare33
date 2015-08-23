@@ -2,7 +2,6 @@
 using System.Collections;
 
 public class HealthSystem : MonoBehaviour {
-
 	private bool alive = true;
 
 	public float maxHealth = 100f;
@@ -19,7 +18,7 @@ public class HealthSystem : MonoBehaviour {
 			return;
 		}
 		currentHealth -= damage;
-		SendMessage ("UpdateFloatingHealthBar",currentHealth/maxHealth);
+		SendMessage ("UpdateFloatingHealthBar",currentHealth/maxHealth, SendMessageOptions.DontRequireReceiver);
 		SendMessage("HitBleed");
 
 		if (currentHealth <= 0) {
@@ -29,8 +28,16 @@ public class HealthSystem : MonoBehaviour {
 	}
 
 	private IEnumerator Die(){
+        SendMessage("stopPermanently");
 		SendMessage ("DeadBleed");
-		yield return new WaitForSeconds (1.5f);
-		Destroy (this.gameObject);
+        if (tag == "Player")
+            GameObject.Find("GameManager").SendMessage("GameOver");
+        else
+        {
+            GameObject.Find("Player").SendMessage("CollectBlood", maxHealth);
+            yield return new WaitForSeconds(1.5f);
+            Destroy(this.gameObject);
+        }
+		
 	}
 }
