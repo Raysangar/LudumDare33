@@ -10,7 +10,7 @@ public class HighScoreManager{
 		string temp="";
 		highScores.Add (score);
 		for(int i=0;i< highScores.Count;i++) { 
-			if(i!=highScores.Count){ 
+			if(i!=highScores.Count-1){ 
 				temp+=highScores[i].ToString()+"*";//note that the last character you add //is important 
 			}
 			else{ 
@@ -22,12 +22,14 @@ public class HighScoreManager{
 
 	public List<float> LoadAllScores(){
 		List<float> highScores = new List<float>();
-		string temp=PlayerPrefs.GetString("HighScores"); 
-		if (temp != null) {
+		string temp=PlayerPrefs.GetString("HighScores",null); 
+		if (temp != null && temp != "") {
+			Debug.Log(temp);
 			string[] tempArray=temp.Split("*".ToCharArray());
-			
+			Debug.Log(tempArray.Length);
+
 			for(int i=0;i<tempArray.Length;i++) { 
-				highScores[i]=float.Parse(tempArray[i]); 
+				highScores.Add(float.Parse(tempArray[i])); 
 			}
 		}
 		return highScores;
