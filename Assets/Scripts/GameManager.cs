@@ -16,11 +16,12 @@ public class GameManager : MonoBehaviour {
 
     public void GameOver()
     {
+		Debug.Log ("Entra aqui");
 		SaveCurrentScore ();
         NavigationController.Instance.GoToScene(NavigationController.Instance.highScoreScene);
     }
 
-	void SaveCurrentScore ()
+	private void SaveCurrentScore ()
 	{
 		float score = GameObject.FindGameObjectWithTag ("Player").GetComponent<BloodCollector> ().scoreBlood;
 		highScoreManager.SaveScore (score);
