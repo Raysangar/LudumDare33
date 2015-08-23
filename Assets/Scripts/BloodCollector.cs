@@ -23,6 +23,6 @@ public class BloodCollector : MonoBehaviour {
 	}
 
 	private void UpdateCounter(){
-		bloodCounter.text = accumulatedBlood.ToString ();
+		//bloodCounter.text = accumulatedBlood.ToString ();
 	}
 }
