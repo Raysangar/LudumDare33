@@ -20,4 +20,8 @@ public class MenuController : MonoBehaviour {
 	public void GoToGameScene(){
 		navController.GoToScene (navController.gameScene);
 	}
+
+	public void Close(){
+		Application.Quit ();
+	}
 }
