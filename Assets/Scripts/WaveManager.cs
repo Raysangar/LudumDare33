@@ -24,8 +24,10 @@ public class WaveManager : MonoBehaviour {
         {
             CancelInvoke("instantiateEnemyIfNecessary");
             InvokeRepeating("instantiateEnemyIfNecessary", 0, wavesInfo[nextLevel].appearenceTimePeriod);
+			Debug.Log(nextLevel);
         }
         currentLevel = nextLevel;
+
 	}
 
     private int getMaximunLevelAvailableFor(float bloodAmount)
