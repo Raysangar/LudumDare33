@@ -11,10 +11,13 @@ public class BloodCollector : MonoBehaviour {
 
 	public float currentBloodForSummon;
 	public float maxBloodForSummon;
+
+    [SerializeField]
+    private GameObject movingArrow;
 	
 	// Use this for initialization
 	void Start () {
-	
+        movingArrow.SetActive(false);
 	}
 
 
@@ -49,9 +52,11 @@ public class BloodCollector : MonoBehaviour {
     {
         if (value == 1)
         {
+            movingArrow.SetActive(true);
         }
         else
         {
+            movingArrow.SetActive(false);
         }
     }
 
