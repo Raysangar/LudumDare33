@@ -30,16 +30,21 @@ public class HealthSystem : MonoBehaviour {
 			alive = false;
 			StartCoroutine (Die ());
 		} else {
+			if(damageClip!=null)
+			{
 			audio.clip=damageClip;
 			audio.Play ();
+			}
 		}
 	}
 
 	private IEnumerator Die(){
         SendMessage("stopPermanently", SendMessageOptions.DontRequireReceiver);
 		SendMessage ("DeadBleed", SendMessageOptions.DontRequireReceiver);
-		audio.clip = dieClip;
-		audio.Play ();
+		if (dieClip != null) {
+			audio.clip = dieClip;
+			audio.Play ();
+		}
         if (tag == "Player" || tag == "Altar")
             GameObject.Find("GameManager").SendMessage("GameOver");
         else
