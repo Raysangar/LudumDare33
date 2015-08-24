@@ -7,6 +7,9 @@ public class AIComponent : MonoBehaviour {
     private EnemyMovementController movementController;
     private AttackComponent attackComponent;
 
+    [SerializeField]
+    private LayerMask targetsLayerMask;
+
 	void Start () {
         altar = GameObject.Find("Altar");
         target = altar;
@@ -17,8 +20,9 @@ public class AIComponent : MonoBehaviour {
 	void Update () {
 
         float distance = Vector3.Distance(transform.position, target.transform.position);
-        
-        if (Vector3.Distance(transform.position, target.transform.position) <= attackComponent.getAttackRange())
+        Ray ray = new Ray(transform.position, (target.transform.position - transform.position).normalized);
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit, attackComponent.getAttackRange(), targetsLayerMask))
         {
             movementController.stop();
             attackComponent.AttackTo(target);
