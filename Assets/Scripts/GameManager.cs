@@ -9,7 +9,6 @@ public class GameManager : MonoBehaviour {
 	private HighScoreManager highScoreManager;
 	// Use this for initialization
 	void Start () {
-        gameOverAnimator.gameObject.SetActive(false);
 		highScoreManager = new HighScoreManager ();
 	}
 	
