@@ -57,6 +57,7 @@ public class Summoner : MonoBehaviour {
             player.GetComponent<HealthSystem>().updateLifeBar(demon.GetComponent<HealthSystem>().currentHealth);
             BloodCollector bloodCollector = player.GetComponent<BloodCollector>();
             bloodCollector.resetBar();
+            bloodCollector.scoreBlood = demon.GetComponent<BloodCollector>().scoreBlood;
             bloodCollector.summonBar.gameObject.SetActive(true);
             player.transform.position = demon.transform.position;
             player.transform.rotation = demon.transform.rotation;
@@ -66,6 +67,7 @@ public class Summoner : MonoBehaviour {
         else
         {
             demon.GetComponent<HealthSystem>().updateLifeBar(player.GetComponent<HealthSystem>().currentHealth);
+            demon.GetComponent<BloodCollector>().scoreBlood = player.GetComponent<BloodCollector>().scoreBlood;
             player.GetComponent<BloodCollector>().summonBar.gameObject.SetActive(false);
             demon.transform.position = player.transform.position;
             demon.transform.rotation = player.transform.rotation;

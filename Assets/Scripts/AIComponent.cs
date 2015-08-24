@@ -15,6 +15,9 @@ public class AIComponent : MonoBehaviour {
 	}
 	
 	void Update () {
+
+        float distance = Vector3.Distance(transform.position, target.transform.position);
+        
         if (Vector3.Distance(transform.position, target.transform.position) <= attackComponent.getAttackRange())
         {
             movementController.stop();
