@@ -26,6 +26,8 @@ public class Summoner : MonoBehaviour {
                 changeModel();
                 playerIsADemon = false;
                 currentTimeOnDemon = 0;
+				Camera.main.SendMessage("PlayAmbientMusic");
+				//DESTRANSFORMAR DEMONIO, CAMBIAr MÚSICA
             }
         }
 	}
@@ -35,7 +37,9 @@ public class Summoner : MonoBehaviour {
         changeModel();
         playerIsADemon = true;
         currentTimeOnDemon = 0;
-    }
+
+		Camera.main.SendMessage("PlayDemonMusic");
+	}
 
     private void changeModel()
     {
