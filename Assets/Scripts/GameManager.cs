@@ -3,9 +3,13 @@ using System.Collections;
 
 public class GameManager : MonoBehaviour {
 
+    [SerializeField]
+    private Animator gameOverAnimator;
+
 	private HighScoreManager highScoreManager;
 	// Use this for initialization
 	void Start () {
+        gameOverAnimator.gameObject.SetActive(false);
 		highScoreManager = new HighScoreManager ();
 	}
 	
@@ -16,8 +20,14 @@ public class GameManager : MonoBehaviour {
 
     public void GameOver()
     {
-		Debug.Log ("Entra aqui");
-		SaveCurrentScore ();
+        SaveCurrentScore ();
+        StartCoroutine("GameOverAnimation");
+    }
+
+    private IEnumerator GameOverAnimation()
+    {
+        gameOverAnimator.SetTrigger("GameOver");
+        yield return new WaitForSeconds(2.5f);
         NavigationController.Instance.GoToScene(NavigationController.Instance.highScoreScene);
     }
 
