@@ -50,7 +50,7 @@ public class BloodCollector : MonoBehaviour {
 
     private void activateSummonBarAnimationIfNeeded(float value)
     {
-        if (value == 1)
+        if (value == 1 && summonBar.gameObject.activeInHierarchy)
         {
             movingArrow.SetActive(true);
         }
