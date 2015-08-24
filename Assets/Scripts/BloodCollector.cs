@@ -22,6 +22,8 @@ public class BloodCollector : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         movingArrow.SetActive(false);
+		bloodBar.SetBool("FullBar",false);
+
 	}
 
 
@@ -57,10 +59,12 @@ public class BloodCollector : MonoBehaviour {
         if (value == 1 && summonBar.gameObject.activeInHierarchy)
         {
             movingArrow.SetActive(true);
+			bloodBar.SetBool("FullBar",true);
 
         }
         else
         {
+			bloodBar.SetBool("FullBar",false);
             movingArrow.SetActive(false);
         }
     }
