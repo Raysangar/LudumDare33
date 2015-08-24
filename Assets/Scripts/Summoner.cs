@@ -3,7 +3,14 @@ using System.Collections;
 
 public class Summoner : MonoBehaviour {
     [SerializeField]
-    private GameObject player, demon, lightning, smoke;
+    private GameObject player, demon, lightning;
+
+    [SerializeField]
+    Animator lightningAnimation;
+
+
+    [SerializeField]
+    ParticleSystem smoke;
 
     [SerializeField]
     private float maximunTimeOnDemon;
@@ -63,6 +70,16 @@ public class Summoner : MonoBehaviour {
             player.SetActive(false);
             demon.SetActive(true);
         }
-        //efectito chulo taquicuá?
+        StartCoroutine("InvokeTheDemon");
+    }
+
+    private IEnumerator InvokeTheDemon()
+    {
+        lightning.SetActive(true);
+        smoke.Play();
+        lightningAnimation.SetTrigger("Lightning");
+        yield return new WaitForSeconds(0.25f);
+        lightning.SetActive(false);
+        
     }
 }
