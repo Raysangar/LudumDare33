@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Summoner : MonoBehaviour {
     [SerializeField]
-    private GameObject player, demon;
+    private GameObject player, demon, lightning, smoke;
 
     [SerializeField]
     private float maximunTimeOnDemon;
@@ -46,6 +46,8 @@ public class Summoner : MonoBehaviour {
         if (playerIsADemon)
         {
             player.GetComponent<HealthSystem>().currentHealth = demon.GetComponent<HealthSystem>().currentHealth;
+            player.GetComponent<BloodCollector>().currentBloodForSummon = demon.GetComponent<BloodCollector>().currentBloodForSummon;
+            player.GetComponent<BloodCollector>().scoreBlood = demon.GetComponent<BloodCollector>().scoreBlood;
             player.transform.position = demon.transform.position;
             player.transform.rotation = demon.transform.rotation;
             player.SetActive(true);
@@ -54,6 +56,8 @@ public class Summoner : MonoBehaviour {
         else
         {
             demon.GetComponent<HealthSystem>().currentHealth = player.GetComponent<HealthSystem>().currentHealth;
+            demon.GetComponent<BloodCollector>().currentBloodForSummon = player.GetComponent<BloodCollector>().currentBloodForSummon;
+            demon.GetComponent<BloodCollector>().scoreBlood = player.GetComponent<BloodCollector>().scoreBlood;
             demon.transform.position = player.transform.position;
             demon.transform.rotation = player.transform.rotation;
             player.SetActive(false);

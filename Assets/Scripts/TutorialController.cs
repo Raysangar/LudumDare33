@@ -6,7 +6,7 @@ public class TutorialController : MonoBehaviour {
     private CanvasGroup canvasGroup;
 
     [SerializeField]
-    private GameObject gameManager, canvas;
+    private GameObject gameManager, canvas, hud;
 
     [SerializeField]
     private MovementController movementController;
@@ -15,6 +15,7 @@ public class TutorialController : MonoBehaviour {
 	void Start () {
         disappearing = false;
         gameManager.SetActive(false);
+        hud.SetActive(false);
         movementController.enabled = false;
         canvasGroup = GetComponent<CanvasGroup>();
 	}
@@ -39,6 +40,7 @@ public class TutorialController : MonoBehaviour {
     private void startGame()
     {
         gameManager.SetActive(true);
+        hud.SetActive(true);
         movementController.enabled = true;
         GameObject.Destroy(canvas);
     }
