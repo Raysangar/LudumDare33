@@ -22,10 +22,15 @@ public class AIComponent : MonoBehaviour {
         float distance = Vector3.Distance(transform.position, target.transform.position);
         Ray ray = new Ray(transform.position, (target.transform.position - transform.position).normalized);
         RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, attackComponent.getAttackRange(), targetsLayerMask))
+        if (Physics.Raycast(ray, out hit, distance + 10))
         {
-            movementController.stop();
-            attackComponent.AttackTo(target);
+            if (Vector3.Distance(hit.point, transform.position) <= attackComponent.getAttackRange() && (hit.collider.gameObject.layer == 10 || hit.collider.gameObject.layer == 15))
+            {
+                movementController.stop();
+                attackComponent.AttackTo(target);
+            }
+            else
+                movementController.moveTo(target.transform.position);
         }
         else
             movementController.moveTo(target.transform.position);
