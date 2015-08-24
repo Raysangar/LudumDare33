@@ -31,7 +31,7 @@ public class MovementController : MonoBehaviour {
 
 	void Attack ()
 	{
-		if (Input.GetKeyDown (KeyCode.E)) {
+		if (Input.GetButtonDown("Attack")) {
 			anim.SetTrigger ("Attack");
 		}
 	}
