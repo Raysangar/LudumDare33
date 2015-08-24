@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Summoner : MonoBehaviour {
     [SerializeField]
-    private GameObject player, demon, lightning;
+    private GameObject player, demon, lightning, demonModeCamera;
 
     [SerializeField]
     Animator lightningAnimation;
@@ -19,6 +19,7 @@ public class Summoner : MonoBehaviour {
     public bool playerIsADemon;
 	// Use this for initialization
 	void Start () {
+        demonModeCamera.SetActive(false);
         playerIsADemon = false;
         currentTimeOnDemon = 0;
 	}
@@ -33,6 +34,7 @@ public class Summoner : MonoBehaviour {
                 changeModel();
                 playerIsADemon = false;
                 currentTimeOnDemon = 0;
+                demonModeCamera.SetActive(false);
 				Camera.main.SendMessage("PlayAmbientMusic");
 				//DESTRANSFORMAR DEMONIO, CAMBIAr MÚSICA
             }
@@ -44,7 +46,7 @@ public class Summoner : MonoBehaviour {
         changeModel();
         playerIsADemon = true;
         currentTimeOnDemon = 0;
-
+        demonModeCamera.SetActive(true);
 		Camera.main.SendMessage("PlayDemonMusic");
 	}
 
@@ -52,8 +54,10 @@ public class Summoner : MonoBehaviour {
     {
         if (playerIsADemon)
         {
-            player.GetComponent<HealthSystem>().currentHealth = demon.GetComponent<HealthSystem>().currentHealth;
-            player.GetComponent<BloodCollector>().resetBar();
+            player.GetComponent<HealthSystem>().updateLifeBar(demon.GetComponent<HealthSystem>().currentHealth);
+            BloodCollector bloodCollector = player.GetComponent<BloodCollector>();
+            bloodCollector.resetBar();
+            bloodCollector.summonBar.gameObject.SetActive(true);
             player.transform.position = demon.transform.position;
             player.transform.rotation = demon.transform.rotation;
             player.SetActive(true);
@@ -61,7 +65,8 @@ public class Summoner : MonoBehaviour {
         }
         else
         {
-            demon.GetComponent<HealthSystem>().currentHealth = player.GetComponent<HealthSystem>().currentHealth;
+            demon.GetComponent<HealthSystem>().updateLifeBar(player.GetComponent<HealthSystem>().currentHealth);
+            player.GetComponent<BloodCollector>().summonBar.gameObject.SetActive(false);
             demon.transform.position = player.transform.position;
             demon.transform.rotation = player.transform.rotation;
             player.SetActive(false);

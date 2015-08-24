@@ -42,7 +42,18 @@ public class BloodCollector : MonoBehaviour {
 
 	private void UpdateSummonBar(){
 		summonBar.value = currentBloodForSummon / maxBloodForSummon;
+        activateSummonBarAnimationIfNeeded(summonBar.value);
 	}
+
+    private void activateSummonBarAnimationIfNeeded(float value)
+    {
+        if (value == 1)
+        {
+        }
+        else
+        {
+        }
+    }
 
     public void resetBar()
     {

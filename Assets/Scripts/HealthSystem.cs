@@ -38,6 +38,13 @@ public class HealthSystem : MonoBehaviour {
 		}
 	}
 
+    public void updateLifeBar(float health)
+    {
+        currentHealth = health;
+        SendMessage("UpdateFloatingHealthBar", currentHealth / maxHealth, SendMessageOptions.DontRequireReceiver);
+        SendMessage("HitBleed", SendMessageOptions.DontRequireReceiver);
+    }
+
 	private IEnumerator Die(){
         SendMessage("stopPermanently", SendMessageOptions.DontRequireReceiver);
 		SendMessage ("DeadBleed", SendMessageOptions.DontRequireReceiver);
