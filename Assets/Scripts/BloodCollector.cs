@@ -12,9 +12,13 @@ public class BloodCollector : MonoBehaviour {
 	public float currentBloodForSummon;
 	public float maxBloodForSummon;
 
+
     [SerializeField]
     private GameObject movingArrow;
-	
+	[SerializeField]
+	private Animator bloodBar;
+
+
 	// Use this for initialization
 	void Start () {
         movingArrow.SetActive(false);
@@ -53,6 +57,7 @@ public class BloodCollector : MonoBehaviour {
         if (value == 1 && summonBar.gameObject.activeInHierarchy)
         {
             movingArrow.SetActive(true);
+
         }
         else
         {
