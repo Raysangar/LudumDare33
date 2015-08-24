@@ -22,7 +22,7 @@ public class TutorialController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	    if(Input.GetKeyDown(KeyCode.Return) && !disappearing)
+	    if(Input.GetButtonDown("Attack") && !disappearing)
             disappearing = true;
         if (disappearing)
         {
