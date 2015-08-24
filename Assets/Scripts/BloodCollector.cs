@@ -43,4 +43,10 @@ public class BloodCollector : MonoBehaviour {
 	private void UpdateSummonBar(){
 		summonBar.value = currentBloodForSummon / maxBloodForSummon;
 	}
+
+    public void resetBar()
+    {
+        currentBloodForSummon = 0;
+        UpdateSummonBar();
+    }
 }
