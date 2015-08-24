@@ -27,7 +27,9 @@ public class SwordController : MonoBehaviour {
 	}
 
 	public void ApplySwordDamage(Collider other){
-		other.GetComponent<HealthSystem> ().ReceiveDamage(swordDamage);
+		if (other.GetComponent<HealthSystem> () != null) {
+			other.GetComponent<HealthSystem> ().ReceiveDamage (swordDamage);
+		}
 	}
 
 }
