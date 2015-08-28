@@ -18,6 +18,9 @@ public class FloatingHealthBar : MonoBehaviour {
 
 	private void UpdateFloatingHealthBar(float value){
 		floatingHealthBarSlider.value = value;
+		if (floatingHealthBarCanvas.GetComponent<Animator> () != null) {
+			floatingHealthBarCanvas.GetComponent<Animator> ().SetTrigger ("Damage");
+		}
 	}
 
 }
